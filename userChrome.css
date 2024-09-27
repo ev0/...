@@ -1,22 +1,15 @@
 /* userChrome.css */
-:root {
+/* forked from: https://github.com/migueravila/SimpleFox */
+
+/* Colors */
+/* Make Sidebery's color for the profile */
+:root, #sidebar-box, .sidebar-placesTree {
   --sfwindow: #19171a;
   --sfsecondary: #201e21;
-}
-
-/* Window colors  */
-:root {
   --toolbar-bgcolor: var(--sfsecondary) !important;
-  --tabs-border-color: var(--sfsecondary) !important;
-  --lwt-sidebar-background-color: var(--sfwindow) !important;
-  --lwt-toolbar-field-focus: var(--sfsecondary) !important;
 }
 
-/* Makes Sideberry's top-bar color change from gray to black */
-#sidebar-box, .sidebar-placesTree {
-  background-color: var(--sfwindow) !important;
-}
-
+/* Eye candy */
 /* Remove top-right margin (gray area) from the urlbar
 So it matches the top-left corner */
 #urlbar-container {
@@ -26,11 +19,6 @@ So it matches the top-left corner */
 /* Move input text in urlbar to the right */
 #urlbar-input {
   margin-left: 10px !important;
-}
-
-/* Remove "Search or enter address" text */
-#urlbar-input::placeholder{ 
-  color: transparent;
 }
 
 /* Remove tabs from the top-bar and the top-bar itself */
@@ -43,6 +31,23 @@ toolbar toolbarspring {
   max-width: 0 !important;
 }
 
+/* Remove some weird outline under urlbar */
+#navigator-toolbox {
+  border: none !important;
+}
+
+#import-button {
+  visibility: collapse;
+}
+
+#PlacesToolbarItems {
+  visibility: collapse;
+}
+
+#OtherBookmarks {
+  visibility: collapse;
+}
+
 /* Remove Save to Pocket button */
 #save-to-pocket-button {
   visibility: collapse;
@@ -53,14 +58,11 @@ toolbar toolbarspring {
   visibility: collapse;
 }
 
-/* Remove some weird outline under urlbar */
-#navigator-toolbox {
-  border: none !important;
+#identity-icon {
+  visibility: collapse;
 }
 
-/* Remove "magnifying glass" icon in urlbar 
-Remove search icon in urlbar */
-#identity-box { 
+#permissions-granted-icon {
   visibility: collapse;
 }
 
@@ -167,3 +169,9 @@ Remove "search tabs" button*/
 #picture-in-picture-button {
   display: ;
 }
+
+/* Remove "Search or enter address" text in new tab*/
+#urlbar-input::placeholder{ 
+  color: transparent;
+}
+
